@@ -1,0 +1,26 @@
+.jumbotron {
+	padding-top: 10px;
+    padding-bottom:10px;
+}
+body{
+	font-family: 'Quicksand', sans-serif;
+
+}
+.content{
+	padding: 20px;
+}
+.form-group{
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}

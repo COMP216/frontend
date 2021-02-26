@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<ul id="items" class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="/">Upload File</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/modelscore">Get model's scores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/download">Download Predicted File</a>
+  </li>
+</ul>
+<div class="content">
+	<h2>Model Scores</h2>
+	<p>We run test on model 10 times and record validation score for each time, then calculate mean of scores</p>
+
+	<table>
+	  <tr>
+	    <th>First Time</th>
+	    <th>Second Time</th>
+	    <th>Third Time</th>
+	    <th>Fourth Time</th>
+	    <th>Fifth Time</th>
+	    <th>Sixth Time</th>
+	    <th>Seventh Time</th>
+	    <th>Eighth Time</th>
+	    <th>Ninth Time</th>
+	    <th>Tenth Time</th>
+	  </tr>
+	  <tr>
+	    <td>{{attributes.scores[0]}}</td>
+	    <td>{{attributes.scores[1]}}</td>
+	    <td>{{attributes.scores[2]}}</td>
+	    <td>{{attributes.scores[3]}}</td>
+	    <td>{{attributes.scores[4]}}</td>
+	    <td>{{attributes.scores[5]}}</td>
+	    <td>{{attributes.scores[6]}}</td>
+	    <td>{{attributes.scores[7]}}</td>
+	    <td>{{attributes.scores[8]}}</td>
+	    <td>{{attributes.scores[9]}}</td>
+	  </tr>
+	</table>
+	<p  style="font-weight: bold;">Mean score: {{attributes.meanScore}}</p>
+
+	<div>
+		<p style="font-weight: bold;">Confusion Matrix:</p>
+		<table>
+			<tr>
+			    <th></th>
+			    <th>Predicted Negative</th>
+			    <th>Predicted Positive</th>
+			</tr>
+			<tr>
+				<th>Actual Negative</th>
+			    <th>{{attributes.confusionMatrix[0][0]}}</th>
+			    <th>{{attributes.confusionMatrix[0][1]}}</th>
+			</tr>
+			<tr>
+				<th>Actual Positive</th>
+			    <th>{{attributes.confusionMatrix[1][0]}}</th>
+			    <th>{{attributes.confusionMatrix[1][1]}}</th>
+			</tr>
+		</table>
+	</div>
+
+</div>
+{% endblock %}

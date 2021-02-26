@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<ul id="items" class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Upload File</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/modelscore">Get model's scores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/download">Download Predicted File</a>
+  </li>
+</ul>
+<div class="content">
+	<h2>Upload File</h2>
+	<p>Please upload your data file here to predict</p>
+	<form method="POST" action="/upload" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="inputFile">File input</label>
+			<input type="file" name="inputFile">
+		</div>
+		<button type="Submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+{% endblock %}
